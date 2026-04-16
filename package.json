@@ -9,7 +9,10 @@
     "format:check": "prettier --check \"**/*.{js,ts,jsx,tsx,css,md,json}\""
   },
   "keywords": [],
-  "author": "",
+  "author": "Santiago Mustafá",
+  "repository": {
+    "url": "https://github.com/santiagoemanuel/monorepo"
+  },
   "license": "ISC",
   "packageManager": "pnpm@10.33.0",
   "devDependencies": {
