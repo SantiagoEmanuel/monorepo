@@ -5,6 +5,10 @@
   "exports": {
     ".": "./index.ts"
   },
+  "scripts": {
+    "build": "tsc --project tsconfig.json",
+    "type-check": "tsc --noEmit"
+  },
   "peerDependencies": {
     "react": ">=19.0.0",
     "react-dom": ">=19.0.0"
@@ -13,6 +17,7 @@
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "react": "^19.0.0",
-    "tailwindcss": "^4.0.0"
+    "tailwindcss": "^4.0.0",
+    "@config/tsconfig": "workspace:*"
   }
 }

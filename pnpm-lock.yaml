@@ -178,6 +178,9 @@ importers:
 
   packages/components:
     dependencies:
+      '@config/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
       react-dom:
         specifier: '>=19.0.0'
         version: 19.2.5(react@19.2.5)
@@ -209,6 +212,8 @@ importers:
       tailwindcss:
         specifier: ^4.2.2
         version: 4.2.2
+
+  packages/tsconfig: {}
 
 packages:
 

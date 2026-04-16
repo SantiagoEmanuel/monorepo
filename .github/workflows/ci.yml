@@ -12,25 +12,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Clonar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Instalar pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 9
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: "pnpm"
+
+      - name: Instalar dependencias del Monorepo
+        run: pnpm install --frozen-lockfile
+
       - name: Ejecutar Validación Global (TurboRepo)
         run: pnpm turbo run build lint type-check
-
-      # - name: Clonar el repositorio
-      #   uses: actions/checkout@v4
-
-      # - name: Instalar pnpm
-      #   uses: pnpm/action-setup@v3
-      #   with:
-      #     version: 9
-
-      # - name: Configurar Node.js
-      #   uses: actions/setup-node@v4
-      #   with:
-      #     node-version: 22
-      #     cache: "pnpm"
-
-      # - name: Instalar dependencias del Monorepo
-      #   run: pnpm install --frozen-lockfile
 
       # - name: Verificación de Formateo
       #   run: pnpm -r exec prettier --check .
