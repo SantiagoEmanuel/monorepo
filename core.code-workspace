@@ -5,7 +5,7 @@
     },
   ],
   "settings": {
-    "cSpell.words": ["costdown"],
+    "cSpell.words": [""],
     "files.associations": {
       "base.css": "tailwindcss",
     },
