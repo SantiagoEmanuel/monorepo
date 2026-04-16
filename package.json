@@ -4,7 +4,10 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "dev": "pnpm -r --parallel dev",
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "type-check": "turbo type-check",
     "prepare": "husky",
     "format:check": "prettier --check \"**/*.{js,ts,jsx,tsx,css,md,json}\""
   },
@@ -25,6 +28,7 @@
     "prettier": "^3.8.3",
     "prettier-plugin-organize-imports": "^4.3.0",
     "prettier-plugin-tailwindcss": "^0.7.2",
+    "turbo": "^2.9.6",
     "typescript-eslint": "^8.58.2"
   },
   "lint-staged": {
