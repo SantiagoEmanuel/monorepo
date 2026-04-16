@@ -11,8 +11,10 @@ export default tseslint.config(
     languageOptions: {
       ecmaVersion: "latest",
       sourceType: "module",
+      parserOptions: {
+        tsconfigRootDir: import.meta.dirname,
+      },
     },
-    basePath: import.meta.dirname,
   },
   {
     files: ["apps/web/**/*.{ts,tsx}"],
