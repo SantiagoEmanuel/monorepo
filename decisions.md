@@ -35,3 +35,15 @@ Tailwind v4 removes the JavaScript config file as the primary interface in favor
 ## Why no `packages/eslint`?
 
 The ESLint config lives at the root because it already covers all workspaces through path-based scoping. Extracting it to a package would require each workspace to install it as a dependency, declare an `eslint.config.js`, and re-export it — adding ceremony without benefit at this scale. Revisit if the project grows to the point where workspaces have meaningfully diverging linting needs.
+
+## Why Changesets for versioning?
+
+Even though we don't publish to npm, Changesets provides a formal process for tracking changes across the monorepo. It solves the "what changed where" problem by generating per-package changelogs. It prevents the cognitive overhead of manual versioning and ensures that Git tags reflect the actual state of each application.
+
+## Why app categorization by type?
+
+In this template, apps are grouped by runtime environment (web, server, mobile) rather than business domain. This makes it easier to apply global infrastructure changes (e.g., updating all Web apps to a new Vite version) and simplifies the CI/CD pipeline configuration, as apps in the same category often share deployment logic.
+
+## Why "Zero Cross-App Imports"?
+
+To maintain a clean dependency graph and ensure fast caching in TurboRepo, we strictly forbid apps from importing from each other. This forces a healthy architecture where shared logic is explicitly promoted to a package in `/packages`, ensuring that changes in one app never side-effect another app directly.
