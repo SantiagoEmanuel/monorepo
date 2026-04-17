@@ -5,7 +5,6 @@
       "dependsOn": ["^build"],
       "outputs": ["dist/**"],
       "inputs": ["src/**", ".env.production"],
-      "globalEnv": ["NODE_ENV"],
       "env": []
     },
     "lint": {
@@ -18,5 +17,6 @@
       "cache": false,
       "persistent": true
     }
-  }
+  },
+  "globalEnv": ["NODE_ENV"]
 }
