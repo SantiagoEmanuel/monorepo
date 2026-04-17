@@ -1,9 +1,10 @@
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 
 interface Props {
   children: ReactNode;
+  className?: string;
 }
 
-export default function Button({ children }: Props) {
-  return <button>{children}</button>;
+export default function Button({ children, className }: Props) {
+  return <button className={className}>{children}</button>;
 }
